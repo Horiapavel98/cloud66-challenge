@@ -45,5 +45,5 @@ class StringMatchTest(unittest.TestCase):
         self.assertEqual(substring_matcher.StringMatch.KMP(text, subtext5), expected5)
         self.assertEqual(substring_matcher.StringMatch.KMP(text, subtext6), expected6)
 
-    def testForBoundaries(self):
-        # Test boundaries here
+    # def testForBoundaries(self):
+        # Test boundaries
