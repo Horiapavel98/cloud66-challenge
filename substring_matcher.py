@@ -61,6 +61,12 @@ class StringMatch:
         Returns a list with the occurrences indexes 
         -- <no matches> if there is no match.
         """
+        if len(text) < len(subtext):
+            return "<no matches>"
+
+        if len(text) == len(subtext) and len(text) == 0:
+            return [0]
+
         text = text.lower()
         subtext = subtext.lower()
         output = []

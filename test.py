@@ -3,7 +3,7 @@ import unittest
 
 class StringMatchTest(unittest.TestCase):
     def testGivenInputsFromRequirementsPaper(self):
-        text = "Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea"
+        text = """Polly put the kettle on, polly put the kettle on, polly put the kettle on we'll all have tea"""
         subtext1 = "Polly" ; expected1 = [1, 26, 51]
         subtext2 = "polly" ; expected2 = [1, 26, 51]
         subtext3 = "ll"    ; expected3 = [3, 28, 53, 78, 82]
@@ -45,5 +45,16 @@ class StringMatchTest(unittest.TestCase):
         self.assertEqual(substring_matcher.StringMatch.KMP(text, subtext5), expected5)
         self.assertEqual(substring_matcher.StringMatch.KMP(text, subtext6), expected6)
 
-    # def testForBoundaries(self):
+    def testForBoundaries(self):
         # Test boundaries
+        text1 = "Hello there, my name is Horia"
+        subtext1 = "Hello there, my name is Luca and lives on the second floor."
+        expected1 = "<no matches>"
+
+        self.assertEqual(substring_matcher.StringMatch.KMP(text1, subtext1), expected1)
+
+        text2 = ""
+        subtext2 = ""
+        expected2 = [0]
+        
+        self.assertEqual(substring_matcher.StringMatch.KMP(text2, subtext2), expected2)
