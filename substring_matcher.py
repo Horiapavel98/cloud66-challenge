@@ -20,7 +20,7 @@ time complexity, namely O(n).
 """
 
 # Toggle testing on/off:
-testing = True
+testing = False
 
 class StringMatch:
     """
